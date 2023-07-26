@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>検索結果</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 30px;
+        }
+        .search-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .search-form .btn-primary {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <form action="{{ url_for('select_title_book') }}" method="get" class="search-form mb-3">
+            <div class="input-group">
+                <input type="text" name="title" class="form-control" placeholder="検索キーワードを入力">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">検索</button>
+                </div>
+            </div>
+        </form>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>タイトル</th>
+                    <th>著者</th>
+                    <th>出版社</th>
+                    <th>ISBN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book[1] }}</td>
+                    <td>{{ book[2] }}</td>
+                    <td>{{ book[3] }}</td>
+                    <td>{{ book[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{url_for('back1')}}" class="btn btn-primary">戻る</a>
+    </div>
+</body>
+</html>

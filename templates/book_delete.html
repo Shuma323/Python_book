@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>図書削除</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .input-group .form-control {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .input-group .btn {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>図書削除</h1>
+    <form action="{{ url_for('book_delete') }}" method="post" class="mb-3">
+        <div class="input-group">
+            <input type="text" name="id" class="form-control" placeholder="削除する図書のID">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary">削除</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本の登録</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 30px;
+        }
+        .book-details {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .book-details p {
+            margin: 10px 0;
+        }
+        .btn-register {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-register:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="book-details">
+        <p>タイトル: {{ title }}</p>
+        <p>著者: {{ author }}</p>
+        <p>出版社: {{ publisher }}</p>
+        <p>ISBN: {{ isbn }}</p>
+        <input type="submit" value="登録" class="btn btn-register">
+    </div>
+</body>
+</html>
