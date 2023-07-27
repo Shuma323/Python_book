@@ -159,6 +159,21 @@ def b_list():
     book_list = db.select_all_books()
     return render_template('list.html', books = book_list)
 
+@app.route('/detail', methods=['GET'])
+def book_detail():
+    book_id = request.args.get('book_id')
+    title = request.args.get('title')
+    author = request.args.get('author')
+    publisher = request.args.get('publisher')
+    isbn = request.args.get('isbn')
+
+    book = db.select_book_detail(isbn)
+
+    session['book_id'] = book_id
+    session['title'] = title
+
+    return render_template('book_detail.html', book=book)
+
 
 #図書のタイトル検索
 @app.route('/select_title_book', methods=['GET'])

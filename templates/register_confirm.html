@@ -37,12 +37,14 @@
     </style>
 </head>
 <body>
-    <div class="user-details">
-        <h1>ユーザー登録確認</h1>
-        <p>ユーザー名: {{ user_name }}</p>
-        <p>パスワード: {{ password }}</p>
-        <p>メールアドレス: {{ mail }}</p>
-        <input type="submit" value="登録" class="btn btn-register">
-    </div>
+    <form action= "{{url_for('u_register_exe')}}" method="post">
+        <div class="user-details">
+            <h1>ユーザー登録確認</h1>
+            <p>ユーザー名: {{ user_name }}</p>
+            <p>パスワード: {{ password }}</p>
+            <p>メールアドレス: {{ mail }}</p>
+            <input type="submit" value="登録" class="btn btn-register">
+        </div>
+</form>
 </body>
 </html>
